@@ -3,7 +3,10 @@
 Newest first. One line per change: what changed and why.
 Live: https://iconic.onl/ · Test version: Railway staging (branch `staging`).
 
-## 2026-10-31 (draft, not live)
+## 2026-11-01
+- Brought index.html in GitHub up to date with what iconic.onl serves: the Calendly booking buttons were live but never saved here.
+
+## 2026-10-31
 - Rebuilt the page around the private AI offer: a private AI on the client's own computer, learn it or have it done, free 30-minute check. Kept the compounding story. Removed the dealer-first use cases, the demo dashboard and the experiment demo. Added llms.txt and structured data.
 - Added the "own your intelligence" pitch, a "why own it" section quoting Sam Altman (Cheeky Pint, Oct 29, 2026), and five toggleable use cases: law, wealth, real estate, owner-run, accounting.
 - Added the free 30-minute check offer right after the hero, a booking button after the proof and at the end, a reassurance line under each, and a pinned booking button on phones. Rewrote the proof in plain English, including why it is not 100 out of 100.
