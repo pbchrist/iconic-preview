@@ -4,6 +4,7 @@ Newest first. One line per change: what changed and why.
 Live: https://iconic.onl/ · Test version: Railway staging (branch `staging`).
 
 ## 2026-11-01
+- (staging, not live) Revised the pitch around private AI and agents: no meter, no rate limits, models no one can change on you. Named Sam Altman in the quote. Added the Fable shutdown as a "More →" detail, an agent row and a plain-English rule for each use case, a Proof section (dealer case study, 23 agents, the rig), the Learn-it ladder, where to draw the line between private and cloud, and fixed the remote-access wording. Nav: "How it compounds" became "Proof".
 - Brought index.html in GitHub up to date with what iconic.onl serves: the Calendly booking buttons were live but never saved here.
 
 ## 2026-10-31
