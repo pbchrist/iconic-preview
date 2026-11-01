@@ -18,8 +18,6 @@ The local server (`server.js`) uses `PORT` when provided and otherwise listens o
 
 ## Making a change
 
-Read `PLAN.md` first: it holds the decisions, status and open items.
-
 Same habits as every Patrick site (ICONIC OS skill `web-build-release`):
 
 1. Work on `staging`. Don't make copies like `index-v2.html`; every saved change is kept in GitHub history.

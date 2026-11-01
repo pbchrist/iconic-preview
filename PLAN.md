@@ -8,13 +8,15 @@ Last updated: 2026-11-01.
 
 | What | Where |
 |---|---|
-| Live site | https://iconic.onl (branch `main`, GitHub Pages) |
+| Live site | https://iconic.onl, published from **repo `pbchrist/iconic-intelligence`**, branch `main`, by `.github/workflows/pages.yml` |
+| Old copy | repo `pbchrist/iconic-preview` is NOT what iconic.onl serves. Don't deploy from it. |
 | Revised version, not live | branch `staging` |
-| Clickable preview of `staging` | https://claude.ai/artifact/7VxfexkHbT9vVVrZTQ2mbD (private to Patrick) |
+| Clickable preview of the Nov 1 revision | https://claude.ai/artifact/7VxfexkHbT9vVVrZTQ2mbD (private to Patrick) |
 | Rollback point | branch `rollback-live-2026-11-01`, exactly what iconic.onl served on Nov 1 |
 
 - On Nov 1, iconic.onl had the Calendly booking buttons, but they had never been saved to GitHub. They are saved now (commit `0e38f45`). Never deploy from an old copy without checking the live site first.
-- Going live = Patrick says "go live", then `staging` is merged into `main`.
+- Going live = Patrick says "go live", then the change goes onto `main` of `iconic-intelligence`.
+- Nov 1 revision went live from `iconic-intelligence` main. Rollback = previous commit `0c7c524` (the Calendly version).
 
 ## How Patrick wants this work done
 
@@ -78,6 +80,21 @@ From the first best-in-class review. None of these can be written without his an
 7. **Something for visitors not ready to book,** for example a one-page PDF in exchange for an email.
 
 ## Demo: the live dashboard
+
+**Built Nov 1: ICONIC Command** (branch `dashboard` of this repo). Real, not a mockup. Answers from the local model with sources, a briefing the model writes, a live job log, knowledge stats and a control panel, plus two fictional sample workspaces (Hollis & Reyes LLP, Northline Supply Co.). Install or update on Beastmaster with:
+`curl -fsSL https://raw.githubusercontent.com/pbchrist/iconic-intelligence/dashboard/install.sh | bash`
+It runs on port 8770, and files go in `~/iconic-command-data/<workspace>/`. Patrick decided: no video, people use the real thing, and nobody uploads their own files. Still open: whether to put it on the public internet, for example with Tailscale Funnel.
+
+**Nov 1, later:** the demo is live on iconic.onl under the hero ("Try it live"), at the public address https://patrick-beastmaster.tailf32530.ts.net.
+- **Intelligence Graph:** the model maps each business MemPalace-style: wings, entities, facts with dates and states, and glowing "hidden connections" (tunnels) with a one-line insight.
+- **Shared learning:** every answer that cites two or more files adds permanent connections, shared by all visitors. The counters show connections and conversations.
+- **Answers:** the first two show sources and suggestions, then it stays clean. "show sources" brings them back. No "I can't" and no disclaimers.
+- **Phones first:** the embed is built for the QR code traffic.
+- **Self-updating:** Beastmaster checks the `dashboard` branch every 10 minutes.
+- **The 3D compounding animation** uses Northline's real numbers. "Watch the live AI do this ↑" asks the demo, and a live connection counter adds rings.
+- On Patrick's own devices (on Tailscale), Chrome blocks the embed, so he sees an "Open the demo" button. Public visitors are unaffected.
+
+### Earlier notes
 
 - **What exists:** `http://100.73.250.50:8769/#dashboard`, on beastmaster, reachable over Tailscale only.
   - "Live concept // Executive control surface" with tabs: Ask / Intelligence / Work / Knowledge / Control.

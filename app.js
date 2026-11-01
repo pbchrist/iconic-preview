@@ -77,6 +77,15 @@
   window.addEventListener('message', (event) => {
     const data = event.data || {};
     if (data.source !== 'iconic-compounding') return;
+    if (data.type === 'askDemo') {
+      const live = document.getElementById('live'), frame = document.querySelector('#liveFrame iframe');
+      if (live) live.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const url = live && (live.getAttribute('data-demo-url') || '').replace(/\/$/, '');
+      if (frame && url && !frame.classList.contains('is-loading')) {
+        setTimeout(() => frame.contentWindow.postMessage({ source: 'iconic-site', type: 'ask', ws: data.ws, q: data.q }, url), 700);
+      } else if (url) { window.open(url + '/', '_blank', 'noopener'); }
+      return;
+    }
     if (data.type === 'height' && ciFrame) {
       const height = Math.max(400, Math.min(Number(data.height) || 0, 3000));
       if (height) ciFrame.style.height = `${height}px`;
@@ -115,7 +124,7 @@
   // hidden while either free-check offer block is on screen.
   const sticky = $('#stickyCta');
   if (sticky && 'IntersectionObserver' in window) {
-    const watched = ['.hero', '#check', '#start', '#contact'].map((sel) => $(sel)).filter(Boolean);
+    const watched = ['.hero', '#live', '#check', '#start', '#contact'].map((sel) => $(sel)).filter(Boolean);
     const visible = new Set();
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => e.isIntersecting ? visible.add(e.target) : visible.delete(e.target));
