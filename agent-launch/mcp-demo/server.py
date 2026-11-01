@@ -1,49 +1,45 @@
-"""ICONIC agent-commerce read-only demo. Illustrative fixtures, never live dealership data."""
+"""ICONIC multi-tenant agent distribution prototype. Public fixture data only."""
 import os
+import json
+from pathlib import Path
 from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP(
-    "ICONIC Automotive Agent Demo",
-    instructions=(
-        "This server demonstrates automotive shopping tools. All listings and offers "
-        "are illustrative fixtures, not live inventory or verified prices. "
-        "Never claim a vehicle is available for purchase or an appointment is booked. "
-        "Do not submit customer data using these read-only tools."
-    ),
+    "ICONIC Agent Distribution Demo",
+    instructions="Public demonstration only. All businesses, services and offers are fictional. No customer records, bookings, purchases, or privileged actions.",
     stateless_http=True,
     json_response=True,
 )
-VEHICLES = [
-    {"id": "DEMO-1001", "year": 2026, "make": "GMC", "model": "Sierra 1500", "trim": "Elevation", "price_usd": 59995, "status": "DEMO_ONLY"},
-    {"id": "DEMO-1002", "year": 2026, "make": "Buick", "model": "Enclave", "trim": "Preferred", "price_usd": 46995, "status": "DEMO_ONLY"},
-    {"id": "DEMO-1003", "year": 2026, "make": "GMC", "model": "Terrain", "trim": "Elevation", "price_usd": 33995, "status": "DEMO_ONLY"},
-]
+DATA = json.loads(Path(__file__).with_name("businesses.json").read_text(encoding="utf-8"))
+def public_business(b):
+    return {k: b[k] for k in ("id", "name", "category", "description", "website", "capabilities")}
 
 @mcp.tool(annotations={"readOnlyHint": True, "openWorldHint": False})
-def search_demo_inventory(make: str = "", model: str = "", maximum_price_usd: int = 0) -> dict:
-    """Search clearly fictional fixture inventory by optional make, model, and maximum USD price.
-    Prices are demonstration numbers, not quotes. Returns an explicit DEMO_ONLY data provenance.
-    """
-    matches = [v for v in VEHICLES
-               if (not make or make.casefold() in v["make"].casefold())
-               and (not model or model.casefold() in v["model"].casefold())
-               and (maximum_price_usd <= 0 or v["price_usd"] <= maximum_price_usd)]
-    return {"source": "ILLUSTRATIVE_FIXTURE_NOT_LIVE", "count": len(matches), "vehicles": matches}
+def discover_businesses(category: str = "", keyword: str = "") -> dict:
+    """Find public business capabilities by industry/category and intent keyword. Demonstration fixtures only."""
+    rows = [public_business(b) for b in DATA if
+            (not category or category.casefold() in b["category"].casefold()) and
+            (not keyword or keyword.casefold() in json.dumps(b).casefold())]
+    return {"provenance": "FICTIONAL_DEMO_FIXTURES", "count": len(rows), "businesses": rows}
 
 @mcp.tool(annotations={"readOnlyHint": True, "openWorldHint": False})
-def explain_next_steps(vehicle_id: str) -> dict:
-    """Explain how a shopper would request verified availability and a human appointment.
-    Does not reserve a vehicle, collect PII, or schedule anything.
-    """
-    vehicle = next((v for v in VEHICLES if v["id"] == vehicle_id), None)
-    if vehicle is None:
-        return {"error": "Unknown demo vehicle ID", "booked": False}
-    return {"vehicle_id": vehicle_id, "booked": False, "availability_verified": False,
-            "instructions": "In production, connect dealer-approved inventory and appointment APIs; require explicit user confirmation before any write action.",
-            "source": "ILLUSTRATIVE_FIXTURE_NOT_LIVE"}
+def get_business_services(business_id: str) -> dict:
+    """Return public services for one business, including descriptive information. No live availability or price claims."""
+    b = next((b for b in DATA if b["id"] == business_id), None)
+    return {"provenance": "FICTIONAL_DEMO_FIXTURES", "business_id": business_id, "services": b["services"]} if b else {"error": "Unknown business ID"}
+
+@mcp.tool(annotations={"readOnlyHint": True, "openWorldHint": False})
+def get_action_options(business_id: str, service_id: str) -> dict:
+    """Describe supported next steps for a service; does not collect data or execute transactions."""
+    b = next((b for b in DATA if b["id"] == business_id), None)
+    s = next((s for s in b["services"] if s["id"] == service_id), None) if b else None
+    if not s:
+        return {"error": "Unknown business or service"}
+    return {"provenance": "FICTIONAL_DEMO_FIXTURES", "business_id": business_id,
+            "service_id": service_id, "actions": s["actions"], "executed": False,
+            "notice": "Agent integrations must connect to each tenant's authorized systems; this demo performs no actions."}
 
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", "8000"))
-    mcp.settings.host = "0.0.0.0"
-    mcp.settings.port = port
+    mcp.settings.host = os.getenv("HOST", "127.0.0.1")
+    mcp.settings.port = int(os.getenv("PORT", "8000"))
     mcp.run(transport="streamable-http")
