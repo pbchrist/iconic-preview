@@ -1,45 +1,43 @@
-# ICONIC Agent Launch — November 1, 2026
-Service landing page: `agent-launch/index.html`
-Demonstration MCP: `agent-launch/mcp-demo/server.py`
+# ICONIC Agent Distribution as a Service
 
-## What this is
-A proposed ICONIC service offering and a **read-only, fixture-backed** remote MCP demo.
-It is not connected to Elk Grove Buick GMC, VinSolutions, vAuto, or a live appointment system.
-No Google submission, publication, hosting, or marketplace approval is implied.
+Cross-industry agent-distribution service landing page and reusable **public fixture** MCP proof of concept. This replaces the vehicle-specific proof of concept.
 
-## Test locally
-```bash
+## Architecture
+Client business → consented data adapters and business workflows → tenant-specific permission boundary → MCP tools → compatible agent clients. ICONIC operates the infrastructure; customer end users interact with the client business, not ICONIC's scheduling system.
+
+Current demo is intentionally **single-public-catalog only**, not a secure production multi-tenant service. Do not host private tenants or customer secrets through it.
+
+### Demo tools
+- `discover_businesses(category, keyword)`
+- `get_business_services(business_id)`
+- `get_action_options(business_id, service_id)` (read-only descriptive; performs no transactions)
+
+All records in `businesses.json` are fictional, with example-domain URLs. No real inventory, offers, schedules, reservations or commerce actions are present.
+
+## Run
+```sh
 cd agent-launch/mcp-demo
-python3 -m venv .venv && source .venv/bin/activate
+python3 -m venv .venv
+. .venv/bin/activate
 pip install -r requirements.txt
 python server.py
 ```
-MCP endpoint: `http://localhost:8000/mcp`.
-Test with `npx @modelcontextprotocol/inspector` and the streamable-HTTP transport.
+Local endpoint: http://127.0.0.1:8000/mcp (Streamable HTTP). Inspect via `npx @modelcontextprotocol/inspector`.
 
-## Deploy
-Build Docker image from `agent-launch/mcp-demo` and deploy to HTTPS hosting with `PORT` bound.
-Do not expose inventory, credentials, customer records, or write tools until authorization, authentication,
-rate limiting, logging, input validation, and data retention policies are implemented.
-Use OAuth 2.1 and per-user consent for any private account access.
-Do not claim fixture data is current.
+## Before production
+- Isolated tenant identity and authorization, approved OAuth 2.1 flows where relevant
+- Connection to business-authorized sources and explicit action schemas
+- Mandatory confirmation for state changes, idempotency, transaction audit logs
+- Input validation, rate limits, prompt injection defenses, redacted logs
+- Health checks, tests, HTTPS endpoint, documented privacy and retention
+- Per-platform compliance, eligibility and approval; no assumed organic placement
 
-## Google Connected Apps
-1. Validate server with MCP Inspector.
-2. Host on public HTTPS and test via Gemini Developer Mode.
-3. Apply for Connected Apps preview and register only when admitted.
-4. Document data-use, privacy, consent, schema descriptions, and tool annotations.
-5. Obtain platform review before describing as available in Gemini or Search.
+## Commercial offer
+1. Agent readiness audit: buyers' intents, candidate workflows, integration effort
+2. One paid pilot per client: secure catalog/knowledge and one approved transaction or inquiry workflow
+3. Platform submission where eligible, plus measurement and maintenance
 
-Reference: https://developers.google.com/connected-apps/mcp
-
-## Commercial pilot scope
-- Discovery workshop: one buyer intent and conversion action
-- Read-only integration to customer-authorized product/catalog data
-- Functional test suite and human approval gate for all write actions
-- Verified telemetry and operational handoff
-- Separate platform registration and review, subject to acceptance
+Client onboarding and business consultations may use ICONIC email/calendar on the **human sales website** only. MCP actions must address the client's own approved systems. No cross-tenant routing or appointment diversion.
 
 ## Release
-Per root README, work in a feature branch, test locally, then merge through staging
-and only promote to main when explicitly approved for a production release.
+Feature branch → staged review and tests → explicitly approved production release. Production iconic.onl remains untouched until authorized.
