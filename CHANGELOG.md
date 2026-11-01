@@ -1,6 +1,6 @@
 # ICONIC website (iconic.onl) — change log
 
-Newest first. One line per change: what changed and why.
+Newest first. One line per change: what changed and why. Decisions and next steps live in PLAN.md.
 Live: https://iconic.onl/ · Test version: Railway staging (branch `staging`).
 
 ## 2026-11-01
