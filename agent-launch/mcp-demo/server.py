@@ -3,12 +3,17 @@ import os
 import json
 from pathlib import Path
 from mcp.server.fastmcp import FastMCP
+from mcp.server.transport_security import TransportSecuritySettings
 
 mcp = FastMCP(
     "ICONIC Agent Distribution Demo",
     instructions="Public demonstration only. All businesses, services and offers are fictional. No customer records, bookings, purchases, or privileged actions.",
     stateless_http=True,
     json_response=True,
+    transport_security=TransportSecuritySettings(
+        allowed_hosts=["patrick-beastmaster.tailf32530.ts.net", "127.0.0.1:*", "localhost:*"],
+        allowed_origins=["https://patrick-beastmaster.tailf32530.ts.net"],
+    ),
 )
 DATA = json.loads(Path(__file__).with_name("businesses.json").read_text(encoding="utf-8"))
 def public_business(b):
