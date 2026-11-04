@@ -1,20 +1,24 @@
-# ICONIC Agent Distribution as a Service
+# ICONIC MCP — real company service catalog
 
-Cross-industry agent-distribution service landing page and reusable **public fixture** MCP proof of concept. This replaces the vehicle-specific proof of concept.
+Read-only MCP for the public offer at https://iconic.onl/ (verified November 4, 2026).
 
-## Architecture
-Client business → consented data adapters and business workflows → tenant-specific permission boundary → MCP tools → compatible agent clients. ICONIC operates the infrastructure; customer end users interact with the client business, not ICONIC's scheduling system.
+## Tools
+- get_iconic_overview: describes actual business and delivery options
+- list_iconic_services: lists public offerings with optional keyword filter
+- find_iconic_starting_point: suggests services based on prospect intent, not a firm recommendation or quote
+- get_iconic_contact: returns public contact options, does not book or send messages
 
-Current demo is intentionally **single-public-catalog only**, not a secure production multi-tenant service. Do not host private tenants or customer secrets through it.
+No private business data, lead capture, transaction tools or fictional catalog. The service does not promise that Gemini or Google Search will index, discover or recommend ICONIC.
 
-### Demo tools
-- `discover_businesses(category, keyword)`
-- `get_business_services(business_id)`
-- `get_action_options(business_id, service_id)` (read-only descriptive; performs no transactions)
+## Running on Beastmaster
+Code: /home/patrick/services/iconic-mcp/src/agent-launch/mcp-demo
+Service: systemctl --user status iconic-mcp.service
+Local MCP: http://127.0.0.1:8860/mcp
+Funnel: https://patrick-beastmaster.tailf32530.ts.net/iconic-mcp/mcp
 
-All records in `businesses.json` are fictional, with example-domain URLs. No real inventory, offers, schedules, reservations or commerce actions are present.
+The service must run separately from other apps. External endpoint is publicly readable; don't introduce customer records or privileged tools into it without tenant isolation, OAuth and consent. Public tool descriptions and business data must stay in sync with the current website.
 
-## Run
+## Local development
 ```sh
 cd agent-launch/mcp-demo
 python3 -m venv .venv
@@ -22,22 +26,12 @@ python3 -m venv .venv
 pip install -r requirements.txt
 python server.py
 ```
-Local endpoint: http://127.0.0.1:8000/mcp (Streamable HTTP). Inspect via `npx @modelcontextprotocol/inspector`.
 
-## Before production
-- Isolated tenant identity and authorization, approved OAuth 2.1 flows where relevant
-- Connection to business-authorized sources and explicit action schemas
-- Mandatory confirmation for state changes, idempotency, transaction audit logs
-- Input validation, rate limits, prompt injection defenses, redacted logs
-- Health checks, tests, HTTPS endpoint, documented privacy and retention
-- Per-platform compliance, eligibility and approval; no assumed organic placement
+## Remaining
+- Validate Gemini Developer Mode connection with the public endpoint
+- Confirm Google's Connected Apps eligibility, application process and review
+- Implement opt-in, verified customer inquiry delivery before calling it lead generation
+- Add observability and a sustainable source-of-truth update process
+- Treat approval, ranking, referrals and revenue as unproven until measured
 
-## Commercial offer
-1. Agent readiness audit: buyers' intents, candidate workflows, integration effort
-2. One paid pilot per client: secure catalog/knowledge and one approved transaction or inquiry workflow
-3. Platform submission where eligible, plus measurement and maintenance
-
-Client onboarding and business consultations may use ICONIC email/calendar on the **human sales website** only. MCP actions must address the client's own approved systems. No cross-tenant routing or appointment diversion.
-
-## Release
-Feature branch → staged review and tests → explicitly approved production release. Production iconic.onl remains untouched until authorized.
+Do not publish changes to the production ICONIC website without explicit approval.
