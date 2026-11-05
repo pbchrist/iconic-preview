@@ -4,6 +4,23 @@ Newest first. One line per change: what changed and why.
 Live: https://iconic.onl/ · Test version: Railway staging (branch `staging`).
 
 
+## 2026-11-04
+- Reserve becomes machine-first: the default agent URL now returns a structured service contract; seven public MCP tools support catalog → $0 quote → free assessment → direct deliverable. The human UI moved to /reserve/agents/ui. Updated the static product page and AI reference manifest.
+- Added ICONIC Intelligence Reserve as a canonical agent-discoverable product under /agents/reserve/, with machine-readable manifest, free public MCP assessment and synthetic demo, tracked in sitemap/llms/AI evaluation and linked from the homepage. The private customer Reserve remains authenticated and isolated; paid tiers are not live.
+- New top of the page: "Own your intelligence. Compound your advantage." Says plainly that everyone rents the same AI and the edge is what your business knows, then "Build your own private intelligence moat" (styled like the demo's "Pick a business. Watch it think.") right above the buttons. Patrick's wording.
+- Made the AI files easy to find: sitemap now lists llms.txt, llms-full.txt and the /ai pages; robots.txt points AI assistants to them; added the Bing IndexNow key file so new pages can be announced right away. No visible change.
+- Rewrote the AI discovery files to lead with proof (the $4,472 dealership gap, 23 agents, the live demo) in the site's own words; cut the disclaimers to a short accuracy list; put back the 23-agents line and the 'static site, no login, don't act on someone's behalf' notes. Still no visible page changed.
+- Added the AI discovery files for AI assistants: a new llms.txt, llms-full.txt and six reference pages under /ai/. Plain text files only; no visible page changed. Fixed the package's section links (#who, #demo, #why didn't exist) and pointed booking at the Calendly link.
+- New bio photo (white jacket, checked shirt) replaces the tuxedo photo.
+- Bio replaced with Patrick's own words (film → technical recruiting → private AI → ICONIC); no dealership, no name-dropping.
+- Removed: "trained on the dealership's own data" (now "built on"), the "Who checks it" line on every business type, and the "Private doesn't mean cut off" note (not every setup needs cloud AI).
+- Free check list: merged "where data goes" and "what is exposed" into one item; new item "Whether a self-hosted AI is right for you"; same added to the check description lower on the page and in llms.txt.
+- Free check list: "where to draw the line" is now optional ("If you also want to use cloud AI"); last item now "What bespoke agents built on your own data could do" (built on, not trained on: no fine-tuning claims).
+- Removed the "Worth knowing first / The plain answers, before you book" box: it talked people out of booking and promised a remote-support setup Patrick never confirmed. Same two claims removed from llms.txt.
+
+## 2026-11-03
+- Link previews (texts, LinkedIn, etc.) now show the ICONIC star icon (the square logo from the browser tab) instead of Patrick's photo: added a share image and told previews to use it.
+
 ## 2026-11-01
 - (branch compound-tie) Animation follows the business picked in the demo (law firm or supply company), works even without 3D; live counter moved below the picture on phones; demo section headline smaller on phones (rem, capped to the screen).
 

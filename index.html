@@ -11,7 +11,14 @@
   <meta property="og:description" content="A private AI and agents on a computer in your office. Your files never leave, no one can change the model on you, and there is no meter running. Start with a free 30-minute check." />
   <meta property="og:url" content="https://iconic.onl/" />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://iconic.onl/iconic-share.png" />
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="600" />
+  <meta property="og:image:alt" content="ICONIC" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://iconic.onl/iconic-share.png" />
   <link rel="alternate" type="text/plain" href="/llms.txt" title="ICONIC for AI agents" />
+  <link rel="alternate" type="application/json" href="/agents/reserve/manifest.json" title="ICONIC Intelligence Reserve for AI agents" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,7 +45,7 @@
         "@id": "https://iconic.onl/#patrick",
         "name": "Patrick Christell",
         "jobTitle": "Principal",
-        "image": "https://iconic.onl/patrick-christell.jpg",
+        "image": "https://iconic.onl/patrick-christell-2026.jpg",
         "worksFor": { "@id": "https://iconic.onl/#org" }
       },
       {
@@ -48,7 +55,7 @@
         "serviceType": "Private AI set up on the client's own computer",
         "provider": { "@id": "https://iconic.onl/#org" },
         "audience": { "@type": "BusinessAudience", "name": "Owner-led businesses and professional firms with years of their own records" },
-        "description": "ICONIC puts a private AI and agents on a computer in the client's office, connected to the client's own files. The data does not leave the building, the model cannot be changed or withdrawn by a vendor, there is no per-token cost, and the system keeps a growing memory of the business. Agents run recurring work such as briefs, monitoring and drafting. Two ways in: Patrick teaches the client to run it, or Patrick sets it up and looks after it month to month. Both start with a free 30-minute check, including where to draw the line between local and cloud models. Local AI models are less capable than the largest cloud models, so a person checks anything that matters.",
+        "description": "ICONIC puts a private AI and agents on a computer in the client's office, connected to the client's own files. The data does not leave the building, the model cannot be changed or withdrawn by a vendor, there is no per-token cost, and the system keeps a growing memory of the business. Agents run recurring work such as briefs, monitoring and drafting. Two ways in: Patrick teaches the client to run it, or Patrick sets it up and looks after it month to month. Both start with a free 30-minute check, including where to draw the line between local and cloud models.",
         "offers": [
           { "@type": "Offer", "name": "Free 30-minute private AI check", "price": "0", "priceCurrency": "USD", "url": "https://calendly.com/patrick-iconic/30min" },
           { "@type": "Offer", "name": "Taught to you: guided setup and teaching", "description": "Priced after the free check." },
@@ -72,7 +79,7 @@
     (function () { try { var d = document.createElement('div'); d.style.cssText = 'position:absolute;visibility:hidden;font-size:100px;line-height:1'; d.textContent = 'x'; document.documentElement.appendChild(d); var z = parseFloat(getComputedStyle(d).fontSize) / 100; d.remove(); if (z > 1.04 && z < 3) document.documentElement.style.setProperty('--tz', z.toFixed(2)); } catch (e) {} })();
   </script>
   <link rel="stylesheet" href="styles.css?v=20261101" />
-  <link rel="stylesheet" href="mobile-first.css?v=20261102h" />
+  <link rel="stylesheet" href="mobile-first.css?v=20261105a" />
   <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
   <script src="https://assets.calendly.com/assets/external/widget.js" defer></script>
 </head>
@@ -101,8 +108,8 @@
     <section class="hero section-shell">
       <div class="hero-copy" data-reveal>
         <div class="eyebrow"><span class="live-dot"></span> PRIVATE BY DESIGN · AI AND AGENTS ON YOUR OWN COMPUTER</div>
-        <h1 class="h1-own">Own your <span class="nw">intelligence.</span><br><em>Don't rent it.</em></h1>
-        <p class="hero-buyer">An AI that knows your business: which client is about to walk, what a vendor promised, where you're losing money. It learns every day, nothing leaves your building, and there's no meter. On your hardware. Under your control.</p>
+        <h1 class="h1-own">Own your <span class="nw">intelligence.</span><br><em>Compound your advantage.</em></h1>
+        <p class="hero-buyer">Everyone can rent the same AI. <strong>Your edge is what the internet doesn't know:</strong> which client is about to walk, what a vendor really promised, where you're losing money.</p>
         <div class="hero-actions hero-actions-threaded">
           <a class="button button-primary" href="https://calendly.com/patrick-iconic/30min" data-calendly-booking>BOOK MY FREE CHECK</a>
           <a class="button button-ghost hero-try" href="#live">TRY IT LIVE</a>
@@ -127,7 +134,7 @@
         <div class="use-case-copy">
           <small>COMPETITOR INTELLIGENCE · A GMC DEALERSHIP</small>
           <h2>He thought his competitor was $800 cheaper. His AI found a $4,472 gap.</h2>
-          <p>It started with one question. Now an always-on agent, trained on the dealership's own data, watches its lot and the lots of five competitors every morning: price, discount, trim and drive, truck by truck. Both owners can ask it anything from their phones, and it writes them a brief three times a week. Every number is dated and linked to the page it came from.</p>
+          <p>It started with one question. Now an always-on agent, built on the dealership's own data, watches its lot and the lots of five competitors every morning: price, discount, trim and drive, truck by truck. Both owners can ask it anything from their phones, and it writes them a brief three times a week. Every number is dated and linked to the page it came from.</p>
           <p class="proof-result"><strong>THE OWNER'S VERDICT</strong> <span>“Exceptional.”</span></p>
         </div>
         <div class="use-case-steps">
@@ -145,13 +152,13 @@
     <section id="memory" class="section-shell capability-cards-section memory-section">
       <div class="section-kicker" data-reveal>WHAT IT DOES</div>
       <div class="section-heading direct-heading" data-reveal>
-        <h2>IT KNOWS. IT WORKS.</h2>
-        <p>A chat window answers when you ask and forgets when you close it. Agents are different: they are given a job, they do it on a schedule, they check their own work, and they report back. ICONIC gives your business both a memory and a staff of agents, on your own computer.</p>
+        <h2>IT KNOWS. IT WORKS.<br><em>IT COMPOUNDS.</em></h2>
+        <p><strong>ICONIC weaponizes what your business knows.</strong> It keeps it under your control, puts it to work through AI agents, and compounds its value. A chat window answers when you ask and forgets when you close it. Agents are given a job, do it on a schedule, check their own work and report back.</p>
       </div>
       <div class="capability-grid compact-capabilities">
-        <article class="capability-card" data-reveal><span class="card-index">01</span><h3>KNOWS</h3><p>No more re-explaining. Your clients, prices, past decisions and the way you like things done are already there, and it answers from your own history: what changed since last month, what you paid a vendor last year.</p><div class="micro-line"><span></span></div></article>
+        <article class="capability-card" data-reveal><span class="card-index">01</span><h3>KNOWS</h3><p>Years of experience, decisions, mistakes and successes that belong to your business, including what your best people know but never wrote down. Your clients, prices and past decisions are already there. When someone leaves, what they knew stays. When a better model comes out, swap it in and the memory carries on.</p><div class="micro-line"><span></span></div></article>
         <article class="capability-card" data-reveal><span class="card-index">02</span><h3>WORKS</h3><p>Agents take on the recurring jobs: reading the market every morning, watching for changes that matter, writing the weekly brief, drafting from your templates. They run while you sleep.</p><div class="micro-line"><span></span></div></article>
-        <article class="capability-card" data-reveal><span class="card-index">03</span><h3>STAYS</h3><p>With you. When someone leaves, what they knew stays. When a better model comes out, swap it in, and the memory and the agents carry on.</p><div class="micro-line"><span></span></div></article>
+        <article class="capability-card" data-reveal><span class="card-index">03</span><h3>COMPOUNDS</h3><p>Every interaction adds context. Every decision becomes part of the record. Every measured outcome makes that intelligence more valuable, and none of it is available to anyone else.</p><div class="micro-line"><span></span></div></article>
       </div>
     </section>
     <section id="uses" class="section-shell proof-section proof-feature use-case-section">
@@ -169,7 +176,6 @@
           <article><span>WHY IT STAYS IN-HOUSE</span><strong id="useCaseWhy">Client confidences never leave the firm.</strong>
             <details class="more-detail case-detail" id="useCaseMoreWrap"><summary><b>More →</b></summary><p id="useCaseMore">The American Bar Association's Formal Opinion 512 (July 2024) says lawyers using AI must protect client confidences, understand the tools they use, and in some cases get the client's informed consent before putting client information into one. A system inside the firm makes that much simpler.</p></details>
           </article>
-          <article><span>WHO CHECKS IT</span><strong id="useCaseCheck">A lawyer reviews anything that matters.</strong></article>
         </div>
       </div>
       <div class="use-case-dots" role="tablist" aria-label="Who it's for">
@@ -206,14 +212,6 @@
           <b>SETUP · ONGOING SUPPORT</b>
         </article>
       </div>
-      <p class="compound-note" data-reveal>Private doesn't mean cut off. The smart setup is both: client files and your own records stay on your computer, and public work like research on the open web can still use the biggest cloud models. Knowing where that line sits is part of what I teach.</p>
-      <div class="private-edge" data-reveal>
-        <small>WORTH KNOWING FIRST</small>
-        <div>
-          <strong>The plain answers, before you book.</strong>
-          <p>A private model on your own computer is smaller than the largest cloud models, so a person checks anything that matters. At a law firm, that means a lawyer checks it. Ongoing support means I look after the system over a secure, encrypted connection that you can switch off at any time. I maintain the software, not your files, and your files never leave your computer.</p>
-        </div>
-      </div>
     </section>
     <section id="check" class="section-shell check-section">
       <div class="check-card" data-reveal>
@@ -224,10 +222,10 @@
         <div class="check-list">
           <small>WHAT YOU WALK AWAY WITH</small>
           <ol>
-            <li><b>Where your client data goes today,</b> including the AI tools your staff already use.</li>
-            <li><b>What is exposed,</b> in plain English.</li>
-            <li><b>Where to draw the line:</b> what should run privately on your own computer, and what is fine to send to the big cloud models.</li>
-            <li><b>What a private AI and agents</b> could do for your business, and whether it is worth it for you.</li>
+            <li><b>Where your client data goes today and what is exposed,</b> including the AI tools your staff already use.</li>
+            <li><b>Whether a self-hosted AI is right for you.</b></li>
+            <li><b>If you also want to use cloud AI, where to draw the line:</b> what should stay on your own computer and what is fine to send out.</li>
+            <li><b>What bespoke agents built on your own data</b> could do for your business.</li>
           </ol>
           <a class="button button-primary check-button" href="https://calendly.com/patrick-iconic/30min" data-calendly-booking>BOOK MY FREE CHECK →</a>
           <p class="cta-note">Or call <a href="tel:+12067738214">206-773-8214</a>. You talk to me, not a sales team.</p>
@@ -237,8 +235,9 @@
     <section id="own" class="section-shell deployment-section own-section">
       <div class="section-kicker" data-reveal>WHY OWN IT</div>
       <div class="section-heading split-heading direct-heading" data-reveal>
-        <h2>THE NEW<br><em>MOAT.</em></h2>
+        <h2>BUILD YOUR OWN<br><em>INTELLIGENCE MOAT.</em></h2>
         <div class="moat-copy"><p class="moat-lead"><strong>Every business is about to run on AI. Renting it gets you what everyone else has: the same models, the same answers, on someone else's terms.</strong> Owning it gets you something no competitor can buy: an intelligence that has learned your business, every client, every deal, every lesson, and keeps compounding every day it runs. A year in, that's a lead nobody closes by signing up for a subscription. Intelligence you own is the new moat. Most businesses haven't started digging.</p>
+        <p class="moat-lead"><strong>The AI is available to everyone. The advantage belongs to you.</strong></p>
         <p>On October 29, 2026, OpenAI CEO Sam Altman said on the Cheeky Pint podcast that running AI on your own computer is, "from a global allocation perspective, actually, it's quite terrible." Of course he would. He rents it to you. Your business should decide where its intelligence lives.</p></div>
       </div>
       <div class="capability-grid compact-capabilities">
@@ -297,7 +296,7 @@
         <div class="offer-copy">
           <div class="section-kicker">THE FREE 30-MINUTE PRIVATE AI CHECK</div>
           <h2>READY WHEN YOU ARE.</h2>
-          <p>I look at where your client data goes today, including any AI tools your staff already use, and show you what is exposed. Then we decide whether I teach you or build it for you.</p>
+          <p>I look at where your client data goes today, including any AI tools your staff already use, show you what is exposed, and tell you whether a self-hosted AI is right for you. Then we decide whether I teach you or build it for you.</p>
           <a class="button button-primary check-button" href="https://calendly.com/patrick-iconic/30min" data-calendly-booking>BOOK MY FREE CHECK →</a>
           <p class="cta-note">Free. Thirty minutes. No commitment. Or call <a href="tel:+12067738214">206-773-8214</a>.</p>
         </div>
@@ -313,11 +312,13 @@
         <div class="contact-brand"><div class="contact-wordmark"><img src="iconic-wordmark.webp" alt="ICONIC." /></div><p class="contact-tagline">Know more. <em>Move first.</em></p></div>
         <div class="contact-copy">
           <div class="principal-lockup">
-            <img class="principal-photo" src="patrick-christell.jpg" alt="Patrick Christell" />
+            <img class="principal-photo" src="patrick-christell-2026.jpg" alt="Patrick Christell" />
             <div>
               <div class="section-kicker card-identity">PATRICK CHRISTELL <em>Principal</em></div>
               <div class="card-ornament" aria-hidden="true"><span></span><i></i><b></b><i></i><span></span></div>
-              <p class="principal-line">Story work with Wes Anderson, Scott Rudin and Vanity Fair, then technical recruiting, taught me to find signal in noise. I became convinced AI belongs on your own machine, so I built my own: a private AI rig in Seattle running 23 agents every day, including the always-on agent a car dealership's owners ask every morning.</p>
+              <p class="principal-line">My career began in film, where I learned to find the story inside a mountain of information. I brought that instinct into technical recruiting, spending the next decade finding exceptional people in unexpected places, including talent from gaming, animation, and aerospace for autonomous vehicle development.</p>
+              <p class="principal-line">Today, I apply the same instincts to artificial intelligence. I build and operate private AI systems on my own hardware, combining local language models, autonomous agents, and persistent memory into systems that become more useful over time.</p>
+              <p class="principal-line">ICONIC is the culmination of those experiences: a belief that the most valuable intelligence comes from recognizing connections, preserving what you've learned, and putting that knowledge to work.</p>
             </div>
           </div>
           <h2>Build an advantage<br>your competitors <em>cannot rent off the shelf.</em></h2>
@@ -327,7 +328,7 @@
           </div>
         </div>
       </div>
-      <footer><span>© 2026 ICONIC. · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></span><span>PRIVATE AI FOR YOUR BUSINESS</span><a href="#top">BACK TO TOP ↑</a></footer>
+      <footer><span>© 2026 ICONIC. · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="llms.txt">AI Reference</a> · <a href="/agents/reserve/">Intelligence Reserve</a></span><span>PRIVATE AI FOR YOUR BUSINESS</span><a href="#top">BACK TO TOP ↑</a></footer>
     </section>
   </main>
 
