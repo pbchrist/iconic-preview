@@ -1,6 +1,10 @@
 # ICONIC website (iconic.onl) — change log
 
 Newest first. One line per change: what changed and why.
+
+## 2026-11-08
+- Add GA4 on user-facing pages (G-0G5007D0F7), track confirmed Calendly bookings without message content, and disclose analytics in privacy policy; leave embedded calculator untagged to avoid duplicate page views.
+
 Live: https://iconic.onl/ · Test version: Railway staging (branch `staging`).
 
 
