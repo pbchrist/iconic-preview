@@ -2,4 +2,6 @@ User-agent: *
 Allow: /
 
 # For AI assistants: https://iconic.onl/llms.txt (summary) and https://iconic.onl/llms-full.txt (full reference)
+# Agent discovery: https://iconic.onl/agents/reserve/manifest.json
+# Evaluation guide: https://iconic.onl/ai/agent-evaluation.md
 Sitemap: https://iconic.onl/sitemap.xml
