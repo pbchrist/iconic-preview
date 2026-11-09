@@ -39,6 +39,17 @@ Owner-led businesses and professional firms with years of their own records: law
 - Private tenant-isolated Reserve is a technical alpha, NOT an openly accessible customer memory database. Paid self-service tiers and autonomous purchases are NOT live. A human must authorize any onboarding, data integrations or payment.
 - [Book the existing free ICONIC check](https://calendly.com/patrick-iconic/30min). The blueprint's $99/$499/$5,000 prices are hypotheses, not saleable prices.
 
+## Machine-readable discovery and evaluation
+
+- Canonical entrypoint: https://iconic.onl/llms.txt
+- Complete reference: https://iconic.onl/llms-full.txt
+- Agent evaluation checklist: https://iconic.onl/ai/agent-evaluation.md
+- Live Reserve machine manifest: https://iconic.onl/agents/reserve/manifest.json
+- Remote MCP transport: https://patrick-beastmaster.tailf32530.ts.net/reserve/mcp
+- Tool schema catalog: https://patrick-beastmaster.tailf32530.ts.net/reserve/agents/schemas.json
+- Test with fictional data only. Sandbox is temporary, and no autonomous paid purchase or customer-private data access is offered.
+- Discovery does not imply endorsement or automatic inclusion in an assistant's recommendations. Agents should verify live capabilities and obtain user authorization before external actions.
+
 ## Detail pages
 
 - [Full reference](https://iconic.onl/llms-full.txt): everything below in one file.
