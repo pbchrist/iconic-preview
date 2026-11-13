@@ -1,0 +1,12 @@
+Title,ICONIC — Competitive Landscape & ChatGPT Citation Grid
+Date,"November 13, 2026"
+Test,30 separate unpersonalized temporary ChatGPT conversations: 15 private-AI and 15 dealership-intelligence buyer questions
+Baseline,"0/30 mentions and 0/30 direct citations for ICONIC; launch baseline, not verdict."
+Competitor Grid,"97 company-level entries consolidated from 107 distinct cited domains, including direct, adjacent, and indirect alternatives."
+Source Register,"107 distinct cited domains including five reference or utility domains, with URLs and prompt IDs."
+30 Prompt Audit,"All questions, answer excerpts, URL citations, and observed results."
+Market Additions,Eight unscored market entrants from earlier personalized result and supplemental checking; not included in test counts.
+Metric,"Citations per 15 = number of unique prompt responses with links to company's domain(s). Not search ranking, market share, or objective credibility."
+Grouping,MarketCheck combines four domains; CarGurus combines two domains; Open WebUI combines two domains.
+Caveat,"A detailed observed landscape, not a proof of every provider in existence."
+Local source,~/Desktop/ICONIC-AEO-Baseline-2026-11-13
