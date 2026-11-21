@@ -102,7 +102,26 @@
   <link rel="stylesheet" href="mobile-first.css?v=20261105a" />
   <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
   <script src="https://assets.calendly.com/assets/external/widget.js" defer></script>
-</head>
+<style>
+/* Homepage sovereignty concept — scoped, reversible, no changes to demo or checkout */
+.sovereignty-hero{position:relative;min-height:88vh;display:flex;align-items:center;padding-top:8rem;padding-bottom:7rem;border-bottom:1px solid rgba(255,255,255,.2);overflow:hidden}
+.sovereignty-hero:before{content:"";position:absolute;right:-9vw;top:4%;width:40vw;height:40vw;border:1px solid rgba(255,255,255,.13);border-radius:50%;box-shadow:0 0 0 6vw rgba(255,255,255,.018),0 0 0 12vw rgba(255,255,255,.012);pointer-events:none}
+.sovereignty-index,.sovereignty-foot{position:absolute;left:clamp(1.5rem,5vw,6rem);right:clamp(1.5rem,5vw,6rem);font-size:.7rem;letter-spacing:.22em;color:#a4a8b5}
+.sovereignty-index{top:3rem}.sovereignty-foot{bottom:2rem;display:flex;justify-content:space-between;gap:1rem}
+.sovereignty-hero .hero-copy{position:relative;z-index:1;max-width:1100px}
+.sovereignty-hero .eyebrow{font-size:.8rem;letter-spacing:.15em;color:#a8b0c2;margin-bottom:2rem}
+.sovereignty-hero .sovereignty-title{font-family:inherit;font-size:clamp(3.7rem,9.2vw,10rem);font-weight:800;line-height:.92;letter-spacing:-.075em;max-width:1100px;margin:0 0 2.5rem}
+.sovereignty-hero .sovereignty-title em{font-style:normal;color:#f0b56b}
+.sovereignty-hero .sovereignty-deck{max-width:640px;font-size:clamp(1.1rem,1.6vw,1.35rem);line-height:1.6}
+.sovereignty-statement{padding-top:7rem;padding-bottom:7rem;border-bottom:1px solid rgba(255,255,255,.16)}
+.sovereignty-statement>p{font-size:.8rem;letter-spacing:.19em;text-transform:uppercase;color:#a4a8b5}
+.sovereignty-statement h2{font-size:clamp(2.2rem,5vw,5.7rem);line-height:1.06;letter-spacing:-.055em;max-width:1100px;margin:2rem 0 3rem}
+.sovereignty-statement h2 em{font-style:normal;color:#f0b56b}
+.sovereignty-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem;max-width:950px;margin-bottom:2rem}
+.sovereignty-columns p{line-height:1.7;color:#bfc4d1}.sovereignty-columns strong{color:#fff;letter-spacing:.12em;font-size:.75rem}
+.sovereignty-statement>a{color:#f0b56b;text-decoration:none;font-weight:700;letter-spacing:.08em}
+@media(max-width:700px){.sovereignty-hero{min-height:76vh;padding-top:8rem;padding-bottom:6rem}.sovereignty-hero .sovereignty-title{font-size:clamp(3.3rem,12vw,5.5rem)}.sovereignty-foot{font-size:.55rem}.sovereignty-columns{grid-template-columns:1fr;gap:1rem}.sovereignty-statement{padding-top:4rem;padding-bottom:4rem}}
+</style></head>
 <body>
   <canvas id="field" aria-hidden="true"></canvas>
   <div class="noise" aria-hidden="true"></div>
@@ -125,17 +144,26 @@
   </header>
 
   <main id="top">
-    <section class="hero section-shell">
+    <section class="hero section-shell sovereignty-hero">
+      <div class="sovereignty-index">ICONIC / AN INDEPENDENCE OF MIND</div>
       <div class="hero-copy" data-reveal>
-        <div class="eyebrow"><span class="live-dot"></span> PRIVATE BY DESIGN · AI AND AGENTS ON YOUR OWN COMPUTER</div>
-        <h1 class="h1-own">Own your <span class="nw">intelligence.</span><br><em>Compound your advantage.</em></h1>
-        <p class="hero-buyer">Rented AI gives you the same answers as your competitors. <strong>Your edge is everything only your business knows:</strong> your clients, your deals, your ground truth. ICONIC turns it into a moat that grows wider every day.</p>
+        <div class="eyebrow">THE QUESTION IS NO LONGER WHETHER AI WILL CHANGE YOUR WORLD.</div>
+        <h1 class="h1-own sovereignty-title">WHO<br>CONTROLS<br><em>YOUR</em> INTELLIGENCE?</h1>
+        <p class="hero-buyer sovereignty-deck">Your work. Your knowledge. Your decisions. More of them pass through machines you don't own, running models you can't inspect, under rules you didn't write. <strong>There is another way.</strong></p>
         <div class="hero-actions hero-actions-threaded">
-          <a class="button button-primary" href="https://calendly.com/patrick-iconic/30min" data-calendly-booking>BOOK MY FREE CHECK</a>
-          <a class="button button-ghost hero-try" href="#live">TRY IT LIVE</a>
+          <a class="button button-primary" href="#live">SEE INDEPENDENT AI WORK</a>
+          <a class="button button-ghost hero-try" href="#own">WHY OWN IT</a>
         </div>
-        <p class="cta-note">Free. Thirty minutes. No commitment.</p>
+        <p class="cta-note">Private AI, business-owned memory and useful agents. Built around your business, not a provider's permission.</p>
       </div>
+      <div class="sovereignty-foot"><span>01 / THE PROBLEM IS CONTROL</span><span>SCROLL TO SEE THE ALTERNATIVE ↓</span></div>
+    </section>
+
+    <section class="sovereignty-statement section-shell" aria-label="The case for independent intelligence">
+      <p>Intelligence is becoming infrastructure.</p>
+      <h2>YOU WOULD NOT HAND A STRANGER THE KEYS TO YOUR BUSINESS.<br><em>WHY HAND OVER ITS MIND?</em></h2>
+      <div class="sovereignty-columns"><p><strong>THE STAKES</strong><br>When access, memory and the rules can change without your consent, dependence becomes a business risk.</p><p><strong>THE RESPONSE</strong><br>ICONIC helps businesses run private models, retain their knowledge and build agents they can actually control.</p></div>
+      <a href="#check">DISCUSS YOUR OWN SETUP ↗</a>
     </section>
 
     <section id="live" class="section-shell live-section" data-demo-url="https://patrick-beastmaster.tailf32530.ts.net">
